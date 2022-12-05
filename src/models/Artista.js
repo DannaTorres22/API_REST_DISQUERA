@@ -39,6 +39,7 @@ const ArtistaSchema= new Schema({
         type: String,
         trim: true,
     },
+    //relacion
     album:[{
         type:Schema.Types.ObjectId,
         ref:'Album'

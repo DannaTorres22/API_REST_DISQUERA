@@ -18,7 +18,7 @@ const AlbumSchema= new Schema({
         type: String,
         trim: true,
     },
-    
+    //relacion 
     cancion:[{
         type:Schema.Types.Number,
         ref:'Cancion'
