@@ -1,9 +1,9 @@
 const Album= require('../models/Album');
-//primera accion 
-//funcion asincrona de listado 
+const Cancion= require('../models/Cancion');
+const Artista= require('../models/Artista');
 
-//obtener cancion
 
+//consulta
 exports.obtener = async (req, res) => {
     try {
       const album = await Album.find().populate('cancion',{
@@ -36,7 +36,6 @@ exports.obtener = async (req, res) => {
     }
   
   }
-  //obtener artista
   exports.obtener = async (req, res) => {
     try {
       const album = await Album.find().populate('artista',{
@@ -79,10 +78,6 @@ exports.obtener = async (req, res) => {
   
   }
 
-
-
-  //agregar cancion 
-
   exports.add = async (req, res) => {
     try {
      
@@ -102,11 +97,12 @@ exports.obtener = async (req, res) => {
       const id = req.params.id;
       const newAlbum = new Album(req.body,req.file)
       console.log(req.file);
-      //console.log(`El id que se va a cambiar estado es ${id}`);
       const cambioAlbum = await Album.findByIdAndUpdate(id, newAlbum);
       res.json({ msj: " el album se actualizó exitosamente"})
     } catch(error) {
       res.status(500).json(error);
     }
   }
+
+  
   

@@ -1,6 +1,6 @@
 const {Router}=require("express");
 const rutasArtista=Router();
-const ctrArt=require("../controllers/artistaControllers")
+const ctrArt=require("../controllers/artista.Controllers")
 const fecha=Date.now();
 
 

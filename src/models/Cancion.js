@@ -2,7 +2,7 @@
 const {Schema,model}=require("mongoose");
 const CancionSchema= new Schema({
     _id: {
-        
+        type: Number
     },
     
     nombreCancion:{
@@ -12,7 +12,7 @@ const CancionSchema= new Schema({
 
     },
     fechaGrabacion:{
-        type: Date,
+        type: String,
         trim: true,
     },
     duracionCancion:{
@@ -23,6 +23,11 @@ const CancionSchema= new Schema({
         type: String,
         trim: true,
     },
+    //relacion
+    album:[{
+        type:Schema.Types.ObjectId,
+        ref:'Album'
+      }]
     
 });
 

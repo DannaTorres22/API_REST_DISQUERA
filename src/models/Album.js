@@ -2,7 +2,7 @@ const {Schema,model}=require("mongoose");
 
 const AlbumSchema= new Schema({
     _id: {
-        
+        type: Number
     },
     
     nombreAlbum:{
@@ -17,8 +17,17 @@ const AlbumSchema= new Schema({
     estadoAlbum:{
         type: String,
         trim: true,
-    }
-    
+    },
+    //relacion 
+    cancion:[{
+        type:Schema.Types.Number,
+        ref:'Cancion'
+      }],
+    artista:[{
+        type:Schema.Types.Number,
+        ref:'Artista'
+      }]
+   
     
 });
 //exportar el esquema 

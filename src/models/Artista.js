@@ -2,17 +2,17 @@ const {Schema,model}=require("mongoose");
 
 const ArtistaSchema= new Schema({
     _id: {
-        
+        type: Number
     },
     
     noDocumento:{
-        type: String,
+        type: Number,
         trim: true,
         unique:true,
 
     },
     tipoDocumento:{
-        type: Date,
+        type: String,
         trim: true,
     },
     nombreArtista:{
@@ -28,7 +28,7 @@ const ArtistaSchema= new Schema({
         trim: true,
     },
     feNaciemintoArtista:{
-        type: Date,
+        type: String,
         trim: true,
     },
     correoArtista:{
@@ -38,7 +38,12 @@ const ArtistaSchema= new Schema({
     estadoArtista:{
         type: String,
         trim: true,
-    }
+    },
+    //relacion
+    album:[{
+        type:Schema.Types.ObjectId,
+        ref:'Album'
+      }]
     
     
 });

@@ -1,6 +1,6 @@
 const {Router}=require("express");
 const rutasCancion=Router();
-const ctrCanc=require("../controllers/cancionControllers")
+const ctrCanc=require("../controllers/cancion.Controllers")
 const fecha=Date.now();
 
 
